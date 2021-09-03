@@ -21,8 +21,6 @@ class HomePage:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.homepage)
-
-        Picasso.get().load("https://www.simplifiedcoding.net/wp-content/uploads/2015/10/advertise.png").into(imageView);
         NetworkConfig().getPopularService()
             .getPopulars()
             .enqueue(object : Callback<PopularModel> {
