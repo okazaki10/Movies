@@ -18,7 +18,7 @@ class HomePage:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.homepage)
-        NetworkConfig().getService()
+        NetworkConfig().getPopularService()
             .getPopulars()
             .enqueue(object : Callback<PopularModel> {
                 override fun onFailure(call: Call<PopularModel>, t: Throwable) {
@@ -29,7 +29,6 @@ class HomePage:AppCompatActivity() {
                     response: Response<PopularModel>
                 ) {
                     rvpop.adapter = PopularAdapter(response.body()?.results)
-
                 }
             })
     }
