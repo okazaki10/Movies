@@ -4,9 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.movies.Config.NetworkConfig
 import com.example.movies.Model.PopularResultsItem
 
 import com.example.movies.R
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_popular.view.*
 
 class PopularAdapter(val data: List<PopularResultsItem>?) : RecyclerView.Adapter<PopularAdapter.MyHolder>() {
@@ -21,6 +23,8 @@ class PopularAdapter(val data: List<PopularResultsItem>?) : RecyclerView.Adapter
     class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(get: PopularResultsItem?) {
             itemView.pop_text.text = get?.backdropPath
+
+            Picasso.get().load(NetworkConfig.URL_IMAGE+get?.backdropPath).into(itemView.gambarposter);
         }
     }
 }

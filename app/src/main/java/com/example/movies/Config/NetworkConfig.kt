@@ -15,7 +15,7 @@ import retrofit2.http.GET
 class NetworkConfig {
     companion object{
         const val URL:String = "https://api.themoviedb.org/3/movie/"
-        const val URL_IMAGE:String = "https://image.tmdb.org/t/p/w500/"
+        const val URL_IMAGE:String = "https://image.tmdb.org/t/p/w500"
         const val API_KEY:String = "f6f98d7d8d6378d73921c90080ffcb0f"
     }
 
