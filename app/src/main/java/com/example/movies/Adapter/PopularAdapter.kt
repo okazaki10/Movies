@@ -26,6 +26,7 @@ class PopularAdapter(val data: List<PopularResultsItem>?) : RecyclerView.Adapter
         holder.itemView.setOnClickListener(View.OnClickListener { view ->
             val intent = Intent(holder.itemView.context, Detail::class.java)
             var data2 = data?.get(position)
+            intent.putExtra("id", data2?.id)
             intent.putExtra("title", data2?.title)
             intent.putExtra("originalTitle",  "Original Title : "+data2?.originalTitle)
             intent.putExtra("overview", data2?.overview)

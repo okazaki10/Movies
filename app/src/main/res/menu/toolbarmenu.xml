@@ -9,7 +9,7 @@
         android:id="@+id/menu_favorite"
         android:icon="@drawable/ic_heart_solid"
         app:showAsAction="ifRoom|withText"
-        android:title="Reload">
+        android:title="Menu Favourite">
     </item>
 
 </menu>

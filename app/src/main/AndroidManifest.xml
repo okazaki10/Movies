@@ -8,12 +8,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
         >
         <activity
             android:name=".ViewModel.HomePage"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
         </activity>
         <activity android:name=".ViewModel.Detail" android:label="Detail" android:theme="@style/AppTheme.ActionBar.Transparent"><meta-data android:name="android.support.PARENT_ACTIVITY"
             android:value=".ViewModel.HomePage"/></activity>
-        <activity android:name=".ViewModel.Favourite" android:label="Detail"  android:theme="@style/Theme.Movies" ></activity>
+        <activity android:name=".ViewModel.Favourite" android:label="Favourite Movies"  android:theme="@style/Theme.Movies" ></activity>
     </application>
 
 </manifest>

@@ -24,19 +24,15 @@ class HomePage:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.homepage)
-        val toolbar = findViewById(R.id.toolbar) as Toolbar
+        setSupportActionBar(findViewById(R.id.toolbar))
 
-        setSupportActionBar(toolbar)
         NetworkConfig().getPopularService()
             .getPopulars()
             .enqueue(object : Callback<PopularModel> {
                 override fun onFailure(call: Call<PopularModel>, t: Throwable) {
                     Toast.makeText(this@HomePage, t.localizedMessage, Toast.LENGTH_SHORT).show()
                 }
-                override fun onResponse(
-                    call: Call<PopularModel>,
-                    response: Response<PopularModel>
-                ) {
+                override fun onResponse(call: Call<PopularModel>, response: Response<PopularModel>) {
                     rvpop.adapter = PopularAdapter(response.body()?.results)
                 }
             })

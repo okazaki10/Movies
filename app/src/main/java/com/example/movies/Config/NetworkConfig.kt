@@ -3,6 +3,7 @@ package com.example.movies.Config
 
 import com.example.movies.Config.NetworkConfig.Companion.API_KEY
 import com.example.movies.Model.PopularModel
+import com.example.movies.Model.ReviewModel
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -10,6 +11,7 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 class NetworkConfig {
     companion object{
@@ -36,8 +38,14 @@ class NetworkConfig {
             .build()
     }
     fun getPopularService() = getRetrofit().create(Popular::class.java)
+    fun getReviewService() = getRetrofit().create(Review::class.java)
 }
 interface Popular {
     @GET("popular?api_key="+API_KEY+"&language=en-US&page=1")
     fun getPopulars(): Call<PopularModel>
+}
+
+interface Review {
+    @GET("{id}/reviews?api_key="+API_KEY+"&language=en-US&page=1")
+    fun getReviews(@Path("id")id:String): Call<ReviewModel>
 }
