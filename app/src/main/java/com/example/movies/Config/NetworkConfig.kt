@@ -3,8 +3,7 @@ package com.example.movies.Config
 
 import com.example.movies.Config.NetworkConfig.Companion.API_KEY
 import com.example.movies.Model.PopularModel
-import com.example.movies.Model.PopularResultsItem
-import com.example.movies.Model.ResultUsers
+
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call

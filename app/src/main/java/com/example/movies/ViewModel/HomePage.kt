@@ -1,6 +1,5 @@
 package com.example.movies.ViewModel
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.widget.Toast
@@ -8,18 +7,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.movies.Adapter.PopularAdapter
 import com.example.movies.Config.NetworkConfig
 import com.example.movies.Model.PopularModel
-import com.example.movies.Model.PopularResultsItem
 import com.example.movies.R
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.activity_main.*
+
 import kotlinx.android.synthetic.main.homepage.*
 import kotlinx.android.synthetic.main.item_popular.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import android.view.View
 import androidx.appcompat.widget.Toolbar
-import com.example.movies.MainActivity
 
 import android.content.Intent
 import android.view.MenuItem
