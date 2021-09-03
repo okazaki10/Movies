@@ -27,7 +27,7 @@ class PopularAdapter(val data: List<PopularResultsItem>?) : RecyclerView.Adapter
             val intent = Intent(holder.itemView.context, Detail::class.java)
             var data2 = data?.get(position)
             intent.putExtra("title", data2?.title)
-            intent.putExtra("originalTitle", data2?.originalTitle)
+            intent.putExtra("originalTitle",  "Original Title : "+data2?.originalTitle)
             intent.putExtra("overview", data2?.overview)
             intent.putExtra("image",NetworkConfig.URL_IMAGE+data2?.backdropPath)
             holder.itemView.context.startActivity(intent)

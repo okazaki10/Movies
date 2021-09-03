@@ -16,8 +16,9 @@ class Detail: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.detail)
-        getSupportActionBar()?.setBackgroundDrawable(ColorDrawable(getResources().getColor(android.R.color.transparent)));
-        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
+
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+
         var title = intent?.extras?.getString("title")
         var image = intent?.extras?.getString("image")
         var originalTitle = intent?.extras?.getString("originalTitle")

@@ -44,11 +44,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/originaltitle"
-            android:layout_marginTop="20dp"
-            android:text="Deskripsi"
+            android:layout_marginTop="19dp"
+            android:text="Description"
+            android:textColor="@color/black"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/overview2"
