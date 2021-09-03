@@ -1,25 +1,29 @@
 package com.example.movies.ViewModel
 
 
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.widget.Toast
 
 
 import androidx.appcompat.app.AppCompatActivity
-import com.example.movies.Adapter.PopularAdapter
 import com.example.movies.Adapter.ReviewAdapter
 import com.example.movies.Config.NetworkConfig
 import com.example.movies.Model.ReviewModel
-import com.example.movies.Model.ReviewResultsItem
 import com.example.movies.R
 import com.squareup.picasso.Picasso
+
 import kotlinx.android.synthetic.main.detail.*
 import kotlinx.android.synthetic.main.homepage.*
 import kotlinx.android.synthetic.main.item_popular.view.*
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
+
+import kotlinx.android.synthetic.main.bottomsheet.*
+
 
 class Detail: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,5 +53,7 @@ class Detail: AppCompatActivity() {
                     rvreview.adapter = ReviewAdapter(response.body()?.results)
                 }
             })
+
+
     }
 }
