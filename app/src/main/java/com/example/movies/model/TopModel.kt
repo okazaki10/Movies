@@ -1,8 +1,8 @@
-package com.example.movies.models
+package com.example.movies.model
 
 import com.google.gson.annotations.SerializedName
 
-data class PopularModel(
+data class TopModel(
 
 	@field:SerializedName("page")
 	val page: Int? = null,
@@ -11,7 +11,7 @@ data class PopularModel(
 	val totalPages: Int? = null,
 
 	@field:SerializedName("results")
-	val results: List<PopularListModel>? = null,
+	val results: List<TopListModel>? = null,
 
 	@field:SerializedName("total_results")
 	val totalResults: Int? = null

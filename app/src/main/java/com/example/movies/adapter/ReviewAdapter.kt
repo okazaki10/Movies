@@ -1,11 +1,11 @@
-package com.example.movies.adapters
+package com.example.movies.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movies.configs.NetworkConfig
-import com.example.movies.models.DetailReviewListModel
+import com.example.movies.config.NetworkConfig
+import com.example.movies.model.DetailReviewListModel
 import com.example.movies.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_review.view.*

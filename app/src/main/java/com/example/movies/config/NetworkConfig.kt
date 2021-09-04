@@ -1,11 +1,11 @@
-package com.example.movies.configs
+package com.example.movies.config
 
 
-import com.example.movies.configs.NetworkConfig.Companion.API_KEY
-import com.example.movies.models.NowplayingModel
-import com.example.movies.models.PopularModel
-import com.example.movies.models.ReviewModel
-import com.example.movies.models.TopModel
+import com.example.movies.config.NetworkConfig.Companion.API_KEY
+import com.example.movies.model.NowplayingModel
+import com.example.movies.model.PopularModel
+import com.example.movies.model.ReviewModel
+import com.example.movies.model.TopModel
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

@@ -1,4 +1,4 @@
-package com.example.movies.models
+package com.example.movies.model
 
 data class FavouriteDBModel (
     val id:String? = null,
