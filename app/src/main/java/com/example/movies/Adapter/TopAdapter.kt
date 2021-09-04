@@ -9,9 +9,8 @@ import com.example.movies.config.NetworkConfig
 import com.example.movies.model.TopListModel
 
 import com.example.movies.R
-import com.example.movies.viewmodel.DetailActivity
+import com.example.movies.presenter.DetailActivity
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.item_popular.view.*
 import kotlinx.android.synthetic.main.item_top.view.*
 
 class TopAdapter(val data: List<TopListModel>?) : RecyclerView.Adapter<TopAdapter.MyHolder>() {

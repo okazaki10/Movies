@@ -1,4 +1,4 @@
-package com.example.movies.viewmodel
+package com.example.movies.presenter
 
 import android.content.Context
 import android.database.sqlite.SQLiteOpenHelper
@@ -10,8 +10,7 @@ import android.database.sqlite.SQLiteDatabase
  * Let's start by creating our database CRUD helper class
  * based on the SQLiteHelper.
  */
-class FavouriteDB(context: Context) :
-    SQLiteOpenHelper(context, DATABASE_NAME, null, 1) {
+class FavouriteDB(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, 1) {
     /**
      * Let's create a companion object to hold our static fields.
      * A Companion object is an object that is common to all instances of a given

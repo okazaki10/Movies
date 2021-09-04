@@ -1,4 +1,4 @@
-package com.example.movies.viewmodel
+package com.example.movies.presenter
 
 
 import android.app.AlertDialog
@@ -34,7 +34,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
-import com.example.movies.adapter.FavouriteAdapter
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.like.LikeButton

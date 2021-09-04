@@ -9,12 +9,11 @@ import com.example.movies.config.NetworkConfig
 import com.example.movies.model.FavouriteDBModel
 
 import com.example.movies.R
-import com.example.movies.viewmodel.DetailActivity
+import com.example.movies.presenter.DetailActivity
 
 
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_favourite.view.*
-import kotlinx.android.synthetic.main.item_review.view.*
 
 class FavouriteAdapter(val data: List<FavouriteDBModel>?) : RecyclerView.Adapter<FavouriteAdapter.MyHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {

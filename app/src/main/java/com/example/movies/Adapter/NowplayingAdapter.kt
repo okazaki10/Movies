@@ -9,11 +9,9 @@ import com.example.movies.config.NetworkConfig
 import com.example.movies.model.NowplayingListModel
 
 import com.example.movies.R
-import com.example.movies.viewmodel.DetailActivity
+import com.example.movies.presenter.DetailActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_now.view.*
-import kotlinx.android.synthetic.main.item_popular.view.*
-import kotlinx.android.synthetic.main.item_top.view.*
 
 class NowplayingAdapter(val data: List<NowplayingListModel>?) : RecyclerView.Adapter<NowplayingAdapter.MyHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {

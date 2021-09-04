@@ -9,7 +9,7 @@ import com.example.movies.config.NetworkConfig
 import com.example.movies.model.PopularListModel
 
 import com.example.movies.R
-import com.example.movies.viewmodel.DetailActivity
+import com.example.movies.presenter.DetailActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_popular.view.*
 

@@ -1,7 +1,6 @@
-package com.example.movies.viewmodel
+package com.example.movies.presenter
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.movies.adapter.FavouriteAdapter
 
