@@ -1,21 +1,21 @@
-package com.example.movies.adapter
+package com.example.movies.adapters
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movies.config.NetworkConfig
-import com.example.movies.model.TopListModel
+import com.example.movies.configs.NetworkConfig
+import com.example.movies.models.PopularListModel
 
 import com.example.movies.R
 import com.example.movies.ui.DetailActivity
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.item_top.view.*
+import kotlinx.android.synthetic.main.item_popular.view.*
 
-class TopAdapter(val data: List<TopListModel>?) : RecyclerView.Adapter<TopAdapter.MyHolder>() {
+class PopularAdapter(val data: List<PopularListModel>?) : RecyclerView.Adapter<PopularAdapter.MyHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_top, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_popular, parent, false)
         return MyHolder(v)
     }
     override fun getItemCount(): Int = data?.size ?: 0
@@ -33,10 +33,8 @@ class TopAdapter(val data: List<TopListModel>?) : RecyclerView.Adapter<TopAdapte
             })
     }
     class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(get: TopListModel?) {
-            itemView.top_title.setText(get?.title)
-            itemView.top_originaltitle.setText(get?.originalTitle)
-            Picasso.get().load(NetworkConfig.URL_IMAGE+get?.backdropPath).into(itemView.top_photo);
+        fun bind(get: PopularListModel?) {
+            Picasso.get().load(NetworkConfig.URL_IMAGE+get?.backdropPath).into(itemView.gambarposter);
         }
     }
 }

@@ -1,7 +1,7 @@
 package com.example.movies.contract
 
 import android.content.Intent
-import com.example.movies.adapter.*
+import com.example.movies.adapters.*
 import com.example.movies.sqlitedb.FavouriteDB
 
 interface MainContract {

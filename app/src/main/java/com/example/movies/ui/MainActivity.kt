@@ -4,15 +4,15 @@ import android.os.Bundle
 import android.view.Menu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.movies.adapter.PopularAdapter
+import com.example.movies.adapters.PopularAdapter
 import com.example.movies.R
 
 import kotlinx.android.synthetic.main.activity_main.*
 
 import android.content.Intent
 import android.view.MenuItem
-import com.example.movies.adapter.NowplayingAdapter
-import com.example.movies.adapter.TopAdapter
+import com.example.movies.adapters.NowplayingAdapter
+import com.example.movies.adapters.TopAdapter
 import com.example.movies.contract.MainContract
 
 import com.example.movies.presenter.MainActivityPresenter

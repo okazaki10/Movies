@@ -1,12 +1,12 @@
-package com.example.movies.adapter
+package com.example.movies.adapters
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movies.config.NetworkConfig
-import com.example.movies.model.FavouriteDBModel
+import com.example.movies.configs.NetworkConfig
+import com.example.movies.models.FavouriteDBModel
 
 import com.example.movies.R
 import com.example.movies.ui.DetailActivity

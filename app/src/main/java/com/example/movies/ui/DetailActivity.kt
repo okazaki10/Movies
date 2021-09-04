@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 
 import androidx.appcompat.app.AppCompatActivity
-import com.example.movies.adapter.ReviewAdapter
+import com.example.movies.adapters.ReviewAdapter
 import com.example.movies.R
 import com.squareup.picasso.Picasso
 

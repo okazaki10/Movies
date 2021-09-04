@@ -1,8 +1,8 @@
-package com.example.movies.model
+package com.example.movies.models
 
 import com.google.gson.annotations.SerializedName
 
-data class PopularListModel(
+data class TopListModel(
 
 	@field:SerializedName("overview")
 	val overview: String? = null,
@@ -35,7 +35,7 @@ data class PopularListModel(
 	val popularity: Double? = null,
 
 	@field:SerializedName("vote_average")
-	val voteAverage: Float? = null,
+	val voteAverage: Double? = null,
 
 	@field:SerializedName("id")
 	val id: Int? = null,
