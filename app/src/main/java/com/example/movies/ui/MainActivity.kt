@@ -15,7 +15,6 @@ import com.example.movies.adapter.NowplayingAdapter
 import com.example.movies.adapter.TopAdapter
 import com.example.movies.contract.MainContract
 
-import com.example.movies.presenter.FavouriteActivity
 import com.example.movies.presenter.MainActivityPresenter
 
 
