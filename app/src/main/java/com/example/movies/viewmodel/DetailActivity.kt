@@ -70,7 +70,7 @@ class DetailActivity: AppCompatActivity() {
         overview2.setText(overview)
         Picasso.get().load(image).into(gambardetail);
 
-        NetworkConfig().getReviewService()
+        NetworkConfig().getService()
             .getReviews(id!!)
             .enqueue(object : Callback<ReviewModel> {
                 override fun onFailure(call: Call<ReviewModel>, t: Throwable) {

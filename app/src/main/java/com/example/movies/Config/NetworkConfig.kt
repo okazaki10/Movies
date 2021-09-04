@@ -39,27 +39,21 @@ class NetworkConfig {
             .build()
     }
 
-    fun getNowService() = getRetrofit().create(Now::class.java)
-    fun getTopService() = getRetrofit().create(Top::class.java)
-    fun getPopularService() = getRetrofit().create(Popular::class.java)
-    fun getReviewService() = getRetrofit().create(Review::class.java)
-}
-interface Now {
-    @GET("now_playing?api_key="+API_KEY+"&language=en-US&page=1")
-    fun getNows(): Call<NowplayingModel>
-}
+    fun getService() = getRetrofit().create(Service::class.java)
 
-interface Top {
-    @GET("top_rated?api_key="+API_KEY+"&language=en-US&page=1")
-    fun getTops(): Call<TopModel>
 }
+interface Service{
 
-interface Popular {
-    @GET("popular?api_key="+API_KEY+"&language=en-US&page=1")
-    fun getPopulars(): Call<PopularModel>
-}
+        @GET("now_playing?api_key="+API_KEY+"&language=en-US&page=1")
+        fun getNows(): Call<NowplayingModel>
 
-interface Review {
-    @GET("{id}/reviews?api_key="+API_KEY+"&language=en-US&page=1")
-    fun getReviews(@Path("id")id:String): Call<ReviewModel>
+        @GET("top_rated?api_key="+API_KEY+"&language=en-US&page=1")
+        fun getTops(): Call<TopModel>
+
+        @GET("popular?api_key="+API_KEY+"&language=en-US&page=1")
+        fun getPopulars(): Call<PopularModel>
+
+        @GET("{id}/reviews?api_key="+API_KEY+"&language=en-US&page=1")
+        fun getReviews(@Path("id")id:String): Call<ReviewModel>
+
 }

@@ -19,7 +19,7 @@ import android.content.Intent
 import android.view.MenuItem
 import com.example.movies.adapter.NowplayingAdapter
 import com.example.movies.adapter.TopAdapter
-import com.example.movies.config.Top
+
 import com.example.movies.model.NowplayingModel
 import com.example.movies.model.TopModel
 
@@ -30,7 +30,7 @@ class MainActivity:AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        NetworkConfig().getPopularService()
+        NetworkConfig().getService()
             .getPopulars()
             .enqueue(object : Callback<PopularModel> {
                 override fun onFailure(call: Call<PopularModel>, t: Throwable) {
@@ -41,7 +41,7 @@ class MainActivity:AppCompatActivity() {
                 }
             })
 
-        NetworkConfig().getTopService()
+        NetworkConfig().getService()
             .getTops()
             .enqueue(object : Callback<TopModel> {
                 override fun onFailure(call: Call<TopModel>, t: Throwable) {
@@ -52,7 +52,7 @@ class MainActivity:AppCompatActivity() {
                 }
             })
 
-        NetworkConfig().getNowService()
+        NetworkConfig().getService()
             .getNows()
             .enqueue(object : Callback<NowplayingModel> {
                 override fun onFailure(call: Call<NowplayingModel>, t: Throwable) {
