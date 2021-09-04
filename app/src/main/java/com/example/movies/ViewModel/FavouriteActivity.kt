@@ -20,12 +20,9 @@ class FavouriteActivity: AppCompatActivity() {
             var favlist = ArrayList<FavouriteDBModel>()
 
             while (res.moveToNext()) {
-                var overview = res.getString(5)
-                if (overview.length>200){
-                    overview.substring(0,200)
-                }
+
                 favlist.add(FavouriteDBModel(res.getString(0),res.getString(1),res.getString(2),
-                res.getString(3),res.getString(4),overview+"..."))
+                res.getString(3),res.getString(4),res.getString(5)))
             }
 
             rvfavourite.adapter = FavouriteAdapter(favlist)
