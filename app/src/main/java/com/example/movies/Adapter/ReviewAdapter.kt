@@ -29,7 +29,13 @@ class ReviewAdapter(val data: List<DetailReviewListModel>?) : RecyclerView.Adapt
             }else{
                 itemView.score.setText("Not Rated")
             }
-            Picasso.get().load(NetworkConfig.URL_IMAGE+get?.authorDetails?.avatarPath).into(itemView.foto_profil);
+            if (get?.authorDetails?.avatarPath!=null) {
+                Picasso.get().load(NetworkConfig.URL_IMAGE + get?.authorDetails?.avatarPath)
+                    .into(itemView.foto_profil);
+            }else{
+                Picasso.get().load("https://st2.depositphotos.com/1502311/12020/v/600/depositphotos_120206860-stock-illustration-profile-picture-vector.jpg")
+                    .into(itemView.foto_profil);
+            }
         }
     }
 }
