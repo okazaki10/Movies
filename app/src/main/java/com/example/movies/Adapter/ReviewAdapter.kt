@@ -1,17 +1,13 @@
 package com.example.movies.Adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movies.Config.NetworkConfig
 import com.example.movies.Model.ReviewResultsItem
 import com.example.movies.R
-import com.example.movies.ViewModel.Detail
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.item_popular.view.*
 import kotlinx.android.synthetic.main.item_review.view.*
 
 class ReviewAdapter(val data: List<ReviewResultsItem>?) : RecyclerView.Adapter<ReviewAdapter.MyHolder>() {

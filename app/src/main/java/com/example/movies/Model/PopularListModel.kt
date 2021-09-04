@@ -2,7 +2,7 @@ package com.example.movies.Model
 
 import com.google.gson.annotations.SerializedName
 
-data class PopularResultsItem(
+data class PopularListModel(
 
 	@field:SerializedName("overview")
 	val overview: String? = null,

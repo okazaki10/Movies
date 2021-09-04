@@ -9,28 +9,27 @@ import com.example.movies.Config.NetworkConfig
 import com.example.movies.Model.PopularModel
 import com.example.movies.R
 
-import kotlinx.android.synthetic.main.homepage.*
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_popular.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import androidx.appcompat.widget.Toolbar
 
 import android.content.Intent
 import android.view.MenuItem
 
 
-class HomePage:AppCompatActivity() {
+class MainActivity:AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.homepage)
+        setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
 
         NetworkConfig().getPopularService()
             .getPopulars()
             .enqueue(object : Callback<PopularModel> {
                 override fun onFailure(call: Call<PopularModel>, t: Throwable) {
-                    Toast.makeText(this@HomePage, t.localizedMessage, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MainActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
                 }
                 override fun onResponse(call: Call<PopularModel>, response: Response<PopularModel>) {
                     rvpop.adapter = PopularAdapter(response.body()?.results)
@@ -48,7 +47,7 @@ class HomePage:AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.getItemId()) {
             R.id.menu_favorite -> {
-                startActivity(Intent(this, Favourite::class.java))
+                startActivity(Intent(this, FavouriteActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)

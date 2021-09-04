@@ -94,11 +94,13 @@
         </RelativeLayout>
     </ScrollView>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
+
+android:orientation="horizontal"
+        android:gravity="right|center_vertical"
 
         android:background="@color/white">
 
@@ -108,21 +110,30 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_toLeftOf="@id/sharebutton"
-            android:layout_marginRight="10dp"
-            android:layout_centerVertical="true"
-            app:icon_size="11dp"
+            android:layout_marginRight="5dp"
+
+            app:icon_size="9dp"
             app:icon_type="heart" />
 
-        <Button
+        <ImageButton
             android:id="@+id/sharebutton"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/heart_on"
-            android:layout_marginRight="10dp"
-            android:layout_centerVertical="true"
+
+            android:background="@drawable/ic_baseline_share_24"
+            android:layout_marginRight="20dp"
+            android:contentDescription="sharebutton"
             android:text="" />
 
-    </RelativeLayout>
-
+    </LinearLayout>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ViewModel.DetailActivity">
+    <FrameLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </RelativeLayout>
