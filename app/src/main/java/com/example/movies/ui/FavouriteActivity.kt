@@ -7,7 +7,7 @@ import com.example.movies.adapter.FavouriteAdapter
 import com.example.movies.R
 import com.example.movies.contract.MainContract
 import com.example.movies.presenter.FavouriteActivityPresenter
-import com.example.movies.presenter.FavouriteDB
+import com.example.movies.sqlitedb.FavouriteDB
 
 
 import kotlinx.android.synthetic.main.favourite.*

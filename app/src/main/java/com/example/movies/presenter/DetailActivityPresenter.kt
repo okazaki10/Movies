@@ -1,14 +1,11 @@
 package com.example.movies.presenter
 
 import android.content.Intent
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
-import com.example.movies.adapter.PopularAdapter
 import com.example.movies.adapter.ReviewAdapter
 import com.example.movies.config.NetworkConfig
 import com.example.movies.contract.MainContract
 import com.example.movies.model.ReviewModel
-import kotlinx.android.synthetic.main.detail.*
+import com.example.movies.sqlitedb.FavouriteDB
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -35,7 +32,7 @@ class DetailActivityPresenter(private val view: MainContract.ViewDetail): MainCo
         view.shareIntent(intent)
     }
 
-    override fun addFavourite(dbHelper: FavouriteDB,id:String, title:String, image:String, originalTitle:String, overview:String) {
+    override fun addFavourite(dbHelper: FavouriteDB, id:String, title:String, image:String, originalTitle:String, overview:String) {
         try {
             dbHelper.insertData(id, title, image, originalTitle, overview)
         } catch (e: Exception) {
@@ -43,7 +40,7 @@ class DetailActivityPresenter(private val view: MainContract.ViewDetail): MainCo
         }
     }
 
-    override fun deleteFavourite(dbHelper: FavouriteDB,id:String) {
+    override fun deleteFavourite(dbHelper: FavouriteDB, id:String) {
         try {
             dbHelper.deleteData(id)
         } catch (e: Exception) {

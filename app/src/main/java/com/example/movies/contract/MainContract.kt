@@ -2,7 +2,7 @@ package com.example.movies.contract
 
 import android.content.Intent
 import com.example.movies.adapter.*
-import com.example.movies.presenter.FavouriteDB
+import com.example.movies.sqlitedb.FavouriteDB
 
 interface MainContract {
     interface ViewMain{
@@ -32,8 +32,8 @@ interface MainContract {
     interface PresenterDetail{
         fun loadReview(id:String)
         fun share(message:String)
-        fun addFavourite(dbHelper: FavouriteDB,id:String, title:String, image:String, originalTitle:String, overview:String)
-        fun deleteFavourite(dbHelper: FavouriteDB,id:String)
+        fun addFavourite(dbHelper: FavouriteDB, id:String, title:String, image:String, originalTitle:String, overview:String)
+        fun deleteFavourite(dbHelper: FavouriteDB, id:String)
     }
 
     interface PresenterFavourite{

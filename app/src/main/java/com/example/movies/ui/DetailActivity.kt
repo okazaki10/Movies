@@ -27,7 +27,7 @@ import android.widget.Button
 import android.widget.ImageButton
 import com.example.movies.contract.MainContract
 import com.example.movies.presenter.DetailActivityPresenter
-import com.example.movies.presenter.FavouriteDB
+import com.example.movies.sqlitedb.FavouriteDB
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.like.LikeButton

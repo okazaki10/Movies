@@ -1,4 +1,4 @@
-package com.example.movies.presenter
+package com.example.movies.sqlitedb
 
 import android.content.Context
 import android.database.sqlite.SQLiteOpenHelper

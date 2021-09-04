@@ -3,9 +3,10 @@ package com.example.movies.presenter
 import com.example.movies.adapter.FavouriteAdapter
 import com.example.movies.contract.MainContract
 import com.example.movies.model.FavouriteDBModel
+import com.example.movies.sqlitedb.FavouriteDB
 
 class FavouriteActivityPresenter(private val view: MainContract.ViewFavourite): MainContract.PresenterFavourite {
-    override fun loadFavourite(dbHelper:FavouriteDB){
+    override fun loadFavourite(dbHelper: FavouriteDB){
         val res = dbHelper.allData
         var favlist = ArrayList<FavouriteDBModel>()
         while (res.moveToNext()) {
