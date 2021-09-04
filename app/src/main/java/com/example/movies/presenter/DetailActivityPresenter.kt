@@ -34,4 +34,20 @@ class DetailActivityPresenter(private val view: MainContract.ViewDetail): MainCo
         intent.putExtra(Intent.EXTRA_TEXT, message);
         view.shareIntent(intent)
     }
+
+    override fun addFavourite(dbHelper: FavouriteDB,id:String, title:String, image:String, originalTitle:String, overview:String) {
+        try {
+            dbHelper.insertData(id, title, image, originalTitle, overview)
+        } catch (e: Exception) {
+            view.onInfoShow(e.message.toString())
+        }
+    }
+
+    override fun deleteFavourite(dbHelper: FavouriteDB,id:String) {
+        try {
+            dbHelper.deleteData(id)
+        } catch (e: Exception) {
+            view.onInfoShow(e.message.toString())
+        }
+    }
 }

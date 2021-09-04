@@ -1,9 +1,8 @@
-package com.example.movies.view
+package com.example.movies.ui
 
 
 import android.os.Bundle
 import android.widget.Toast
-
 
 import androidx.appcompat.app.AppCompatActivity
 import com.example.movies.adapter.ReviewAdapter
@@ -22,7 +21,6 @@ import android.view.WindowManager
 import android.os.Build
 
 import com.google.android.material.bottomsheet.BottomSheetDialog
-
 
 import android.view.View
 import android.widget.Button
@@ -75,24 +73,11 @@ class DetailActivity: AppCompatActivity(),MainContract.ViewDetail {
 
         add_favourite.setOnLikeListener(object : OnLikeListener {
             override fun liked(likeButton: LikeButton) {
-
-                try {
-                    dbHelper.insertData(id!!,title!!,image!!,originalTitle!!,overview!!)
-                }catch (e: Exception){
-                    e.printStackTrace()
-                    Toast.makeText(this@DetailActivity, e.message.toString(), Toast.LENGTH_SHORT).show()
-                }
-
+                presenter.addFavourite(dbHelper,id!!, title!!, image!!, originalTitle!!, overview!!)
             }
+
             override fun unLiked(likeButton: LikeButton) {
-
-                try {
-                    dbHelper.deleteData(id!!)
-                }catch (e: Exception){
-                    e.printStackTrace()
-                    Toast.makeText(this@DetailActivity, e.message.toString(), Toast.LENGTH_SHORT).show()
-                }
-
+                presenter.deleteFavourite(dbHelper,id!!)
             }
         })
 
@@ -102,6 +87,10 @@ class DetailActivity: AppCompatActivity(),MainContract.ViewDetail {
 
         sharebutton.setOnClickListener(View.OnClickListener { showBottomSheetDialog() })
 
+    }
+
+    override fun onInfoShow(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     override fun showReview(adapter: ReviewAdapter) {

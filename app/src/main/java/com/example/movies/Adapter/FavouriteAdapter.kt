@@ -9,7 +9,7 @@ import com.example.movies.config.NetworkConfig
 import com.example.movies.model.FavouriteDBModel
 
 import com.example.movies.R
-import com.example.movies.view.DetailActivity
+import com.example.movies.ui.DetailActivity
 
 
 import com.squareup.picasso.Picasso
