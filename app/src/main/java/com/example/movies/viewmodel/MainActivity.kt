@@ -17,6 +17,11 @@ import retrofit2.Response
 
 import android.content.Intent
 import android.view.MenuItem
+import com.example.movies.adapter.NowplayingAdapter
+import com.example.movies.adapter.TopAdapter
+import com.example.movies.config.Top
+import com.example.movies.model.NowplayingModel
+import com.example.movies.model.TopModel
 
 
 class MainActivity:AppCompatActivity() {
@@ -35,6 +40,31 @@ class MainActivity:AppCompatActivity() {
                     rvpop.adapter = PopularAdapter(response.body()?.results)
                 }
             })
+
+        NetworkConfig().getTopService()
+            .getTops()
+            .enqueue(object : Callback<TopModel> {
+                override fun onFailure(call: Call<TopModel>, t: Throwable) {
+                    Toast.makeText(this@MainActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+                }
+                override fun onResponse(call: Call<TopModel>, response: Response<TopModel>) {
+                    rvtop.adapter = TopAdapter(response.body()?.results)
+                }
+            })
+
+        NetworkConfig().getNowService()
+            .getNows()
+            .enqueue(object : Callback<NowplayingModel> {
+                override fun onFailure(call: Call<NowplayingModel>, t: Throwable) {
+                    Toast.makeText(this@MainActivity, t.localizedMessage, Toast.LENGTH_SHORT).show()
+                }
+                override fun onResponse(call: Call<NowplayingModel>, response: Response<NowplayingModel>) {
+                    rvnow.adapter = NowplayingAdapter(response.body()?.results)
+                }
+            })
+
+
+
     }
 
     // Menu icons are inflated just as they were with actionbar

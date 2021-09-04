@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+ >
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -20,11 +25,19 @@
     android:padding="18dp"
  >
 
+    <TextView
+        android:id="@+id/text_pop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Popular Movie"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvpop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/text_pop"
         android:layout_marginTop="15dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
@@ -32,13 +45,51 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/text_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Popular Movie"
-        android:textStyle="bold"
+        android:layout_below="@+id/rvpop"
+        android:layout_marginTop="20dp"
+        android:text="Top Movie"
+        android:textColor="@color/black"
         android:textSize="20sp"
-        android:textColor="@color/black"/>
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvtop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_top"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <TextView
+        android:id="@+id/text_now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rvtop"
+        android:layout_marginTop="20dp"
+        android:text="Now Playing"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvnow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_now"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
 
 </RelativeLayout>
 </LinearLayout>
+</ScrollView>

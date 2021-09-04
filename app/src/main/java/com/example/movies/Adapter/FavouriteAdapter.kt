@@ -29,7 +29,7 @@ class FavouriteAdapter(val data: List<FavouriteDBModel>?) : RecyclerView.Adapter
             var data2 = data?.get(position)
             intent.putExtra("id", data2?.movie_id)
             intent.putExtra("title", data2?.title)
-            intent.putExtra("originalTitle",  "Original Title : "+data2?.original_title)
+            intent.putExtra("originalTitle", data2?.original_title)
             intent.putExtra("overview", data2?.overview)
             intent.putExtra("image",NetworkConfig.URL_IMAGE+data2?.image)
 

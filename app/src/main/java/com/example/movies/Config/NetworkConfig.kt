@@ -2,8 +2,10 @@ package com.example.movies.config
 
 
 import com.example.movies.config.NetworkConfig.Companion.API_KEY
+import com.example.movies.model.NowplayingModel
 import com.example.movies.model.PopularModel
 import com.example.movies.model.ReviewModel
+import com.example.movies.model.TopModel
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -36,9 +38,22 @@ class NetworkConfig {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
+    fun getNowService() = getRetrofit().create(Now::class.java)
+    fun getTopService() = getRetrofit().create(Top::class.java)
     fun getPopularService() = getRetrofit().create(Popular::class.java)
     fun getReviewService() = getRetrofit().create(Review::class.java)
 }
+interface Now {
+    @GET("now_playing?api_key="+API_KEY+"&language=en-US&page=1")
+    fun getNows(): Call<NowplayingModel>
+}
+
+interface Top {
+    @GET("top_rated?api_key="+API_KEY+"&language=en-US&page=1")
+    fun getTops(): Call<TopModel>
+}
+
 interface Popular {
     @GET("popular?api_key="+API_KEY+"&language=en-US&page=1")
     fun getPopulars(): Call<PopularModel>
