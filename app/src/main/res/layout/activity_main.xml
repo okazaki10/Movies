@@ -31,7 +31,7 @@
         android:id="@+id/text_pop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Popular Movie"
+        android:text="@string/popular_movie"
         android:textStyle="bold"
         android:textSize="20sp"
         android:textColor="@color/black"/>
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rvpop"
         android:layout_marginTop="20dp"
-        android:text="Top Rated"
+        android:text="@string/top_rated"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -75,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/rvtop"
         android:layout_marginTop="20dp"
-        android:text="Now Playing"
+        android:text="@string/now_playing"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />

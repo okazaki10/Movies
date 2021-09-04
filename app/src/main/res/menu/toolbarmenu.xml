@@ -9,7 +9,7 @@
         android:id="@+id/menu_favorite"
         android:icon="@drawable/ic_heart_solid"
         app:showAsAction="ifRoom|withText"
-        android:contentDescription="Menu Favourite">
+        android:contentDescription="@string/menu_favourite">
     </item>
 
 </menu>

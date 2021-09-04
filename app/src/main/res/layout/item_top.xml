@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
 
             android:layout_marginTop="5dp"
-            android:text="TextView"
+            android:text="@string/title"
             android:textColor="@color/black"
             android:textSize="15sp"
             android:textStyle="bold" />
@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:textSize="15dp"
-            android:text="TextView" />
+            android:text="@string/origintaltitle" />
 
     </LinearLayout>
 

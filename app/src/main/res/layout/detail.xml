@@ -36,7 +36,7 @@
                     android:id="@+id/judul"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
+                    android:text="@string/textview"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -47,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/judul"
                     android:layout_marginTop="10dp"
-                    android:text="TextView" />
+                    android:text="@string/textview" />
 
                 <TextView
                     android:id="@+id/deskripsi"
@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/originaltitle"
                     android:layout_marginTop="19dp"
-                    android:text="Description"
+                    android:text="@string/description"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -66,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/deskripsi"
                     android:layout_marginTop="10dp"
-                    android:text="TextView" />
+                    android:text="@string/textview" />
 
                 <TextView
                     android:id="@+id/judulreview"
@@ -74,7 +74,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/overview2"
                     android:layout_marginTop="19dp"
-                    android:text="Review"
+                    android:text="@string/review"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -110,7 +110,6 @@
             android:id="@+id/add_favourite"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_toLeftOf="@id/sharebutton"
             android:layout_marginRight="5dp"
 
             app:icon_size="14dp"
