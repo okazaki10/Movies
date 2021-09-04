@@ -38,7 +38,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.like.LikeButton
 
 import com.like.OnLikeListener
-import kotlinx.android.synthetic.main.sqlite_view.*
 
 
 class DetailActivity: AppCompatActivity() {

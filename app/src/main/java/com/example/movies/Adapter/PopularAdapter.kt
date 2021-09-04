@@ -31,7 +31,7 @@ class PopularAdapter(val data: List<PopularListModel>?) : RecyclerView.Adapter<P
             intent.putExtra("overview", data2?.overview)
             intent.putExtra("image",NetworkConfig.URL_IMAGE+data2?.backdropPath)
             holder.itemView.context.startActivity(intent)
-    
+
             })
     }
     class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
