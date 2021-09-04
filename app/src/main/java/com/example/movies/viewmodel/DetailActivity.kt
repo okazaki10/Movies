@@ -22,6 +22,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 import android.content.DialogInterface
+import android.content.Intent
 
 import android.view.WindowManager
 
@@ -138,24 +139,11 @@ class DetailActivity: AppCompatActivity() {
 
         view.findViewById<ImageButton>(R.id.facebook).setOnClickListener({
 
-            val res = dbHelper.allData
-
-            val buffer = StringBuffer()
-            while (res.moveToNext()) {
-                buffer.append("ID :" + res.getString(0) + "\n")
-                buffer.append("MOVIE_ID :" + res.getString(1) + "\n")
-                buffer.append("TITLE :" + res.getString(2) + "\n")
-                buffer.append("IMAGE :" + res.getString(3) + "\n")
-                buffer.append("ORIGINAL TITLE :" + res.getString(4) + "\n")
-                buffer.append("OVERVIEW :" + res.getString(5) + "\n")
-            }
-            val isi = dbHelper.selectData(id!!)
-            var coba = ""
-            while (isi.moveToNext()) {
-                coba = isi.getString(0)
-            }
-
-            showDialog("Data Listing"+"   "+coba, buffer.toString())
+            var intent = Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT, "hey check this out : "+title+", i think it's great");
+            startActivity(Intent.createChooser(intent, "Share"));
 
         })
         sheetDialog = BottomSheetDialog(this@DetailActivity)

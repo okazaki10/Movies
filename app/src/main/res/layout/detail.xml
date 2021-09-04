@@ -85,6 +85,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/judulreview"
                     android:layout_marginTop="15dp"
+                    android:layout_marginBottom="30dp"
                     android:nestedScrollingEnabled="false"
                     android:orientation="vertical"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"></androidx.recyclerview.widget.RecyclerView>

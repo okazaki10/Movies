@@ -24,6 +24,11 @@ class ReviewAdapter(val data: List<DetailReviewListModel>?) : RecyclerView.Adapt
         fun bind(get: DetailReviewListModel?) {
             itemView.author.setText(get?.author)
             itemView.reviewcontent.setText(get?.content)
+            if (get?.authorDetails?.rating != null) {
+                itemView.score.setText(get?.authorDetails?.rating.toString() + "/10")
+            }else{
+                itemView.score.setText("Not Rated")
+            }
             Picasso.get().load(NetworkConfig.URL_IMAGE+get?.authorDetails?.avatarPath).into(itemView.foto_profil);
         }
     }

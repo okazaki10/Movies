@@ -33,7 +33,7 @@ class FavouriteActivity: AppCompatActivity() {
         }
 
         rvfavourite.adapter = FavouriteAdapter(favlist)
-  
+
     }
 
     }
