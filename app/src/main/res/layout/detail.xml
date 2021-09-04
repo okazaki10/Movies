@@ -97,7 +97,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
 
         android:orientation="horizontal"
@@ -113,16 +113,16 @@
             android:layout_toLeftOf="@id/sharebutton"
             android:layout_marginRight="5dp"
 
-            app:icon_size="9dp"
+            app:icon_size="12dp"
             app:icon_type="heart" />
 
         <ImageButton
             android:id="@+id/sharebutton"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
 
-            android:background="@drawable/ic_baseline_share_24"
             android:layout_marginRight="20dp"
+            android:background="@drawable/ic_baseline_share_24"
             android:contentDescription="sharebutton"
             android:text="" />
 
@@ -132,11 +132,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".viewmodel.DetailActivity">
-    <FrameLayout
-        android:id="@+id/bottom_sheet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
+
+        <FrameLayout
+            android:id="@+id/bottom_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </RelativeLayout>
