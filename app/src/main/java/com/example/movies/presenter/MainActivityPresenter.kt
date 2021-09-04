@@ -22,11 +22,9 @@ class MainActivityPresenter(private val view:MainContract.View):MainContract.Pre
             .enqueue(object : Callback<PopularModel> {
                 override fun onFailure(call: Call<PopularModel>, t: Throwable) {
                     view.onErrorShow(t.localizedMessage)
-
                 }
                 override fun onResponse(call: Call<PopularModel>, response: Response<PopularModel>) {
                     view.showPopular(PopularAdapter(response.body()?.results))
-                    view.onErrorShow("asdasasdasdasddss")
                 }
             })
      }
