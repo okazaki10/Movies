@@ -9,7 +9,7 @@ import com.example.movies.config.NetworkConfig
 import com.example.movies.model.NowplayingListModel
 
 import com.example.movies.R
-import com.example.movies.presenter.DetailActivity
+import com.example.movies.view.DetailActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_now.view.*
 

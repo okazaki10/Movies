@@ -19,9 +19,9 @@ import com.example.movies.presenter.FavouriteActivity
 import com.example.movies.presenter.MainActivityPresenter
 
 
-class MainActivity:AppCompatActivity(),MainContract.View {
+class MainActivity:AppCompatActivity(),MainContract.ViewMain {
 
-    lateinit var presenter: MainContract.Presenter
+    lateinit var presenter: MainContract.PresenterMain
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

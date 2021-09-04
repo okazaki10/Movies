@@ -22,7 +22,7 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".presenter.DetailActivity" android:label="Detail" android:theme="@style/AppTheme.ActionBar.Transparent"><meta-data android:name="android.support.PARENT_ACTIVITY"
+        <activity android:name=".view.DetailActivity" android:label="Detail" android:theme="@style/AppTheme.ActionBar.Transparent"><meta-data android:name="android.support.PARENT_ACTIVITY"
             android:value=".view.MainActivity"/></activity>
         <activity android:name=".presenter.FavouriteActivity" android:label="Favourite Movies"  android:theme="@style/Theme.Movies" ></activity>
 

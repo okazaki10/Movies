@@ -1,6 +1,6 @@
 package com.example.movies.presenter
 
-import android.widget.Toast
+
 import com.example.movies.adapter.NowplayingAdapter
 import com.example.movies.adapter.PopularAdapter
 import com.example.movies.adapter.TopAdapter
@@ -9,12 +9,12 @@ import com.example.movies.contract.MainContract
 import com.example.movies.model.NowplayingModel
 import com.example.movies.model.PopularModel
 import com.example.movies.model.TopModel
-import kotlinx.android.synthetic.main.activity_main.*
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivityPresenter(private val view:MainContract.View):MainContract.Presenter {
+class MainActivityPresenter(private val view:MainContract.ViewMain):MainContract.PresenterMain {
 
     override fun loadPopular(){
         NetworkConfig().getService()
@@ -22,6 +22,7 @@ class MainActivityPresenter(private val view:MainContract.View):MainContract.Pre
             .enqueue(object : Callback<PopularModel> {
                 override fun onFailure(call: Call<PopularModel>, t: Throwable) {
                     view.onErrorShow(t.localizedMessage)
+
                 }
                 override fun onResponse(call: Call<PopularModel>, response: Response<PopularModel>) {
                     view.showPopular(PopularAdapter(response.body()?.results))
