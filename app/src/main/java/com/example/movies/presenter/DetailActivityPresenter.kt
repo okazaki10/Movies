@@ -1,10 +1,10 @@
 package com.example.movies.presenter
 
 import android.content.Intent
-import com.example.movies.adapters.ReviewAdapter
-import com.example.movies.configs.NetworkConfig
+import com.example.movies.adapter.ReviewAdapter
+import com.example.movies.config.NetworkConfig
 import com.example.movies.contract.MainContract
-import com.example.movies.models.ReviewModel
+import com.example.movies.model.ReviewModel
 import com.example.movies.sqlitedb.FavouriteDB
 import retrofit2.Call
 import retrofit2.Callback

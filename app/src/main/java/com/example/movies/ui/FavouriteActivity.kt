@@ -2,7 +2,7 @@ package com.example.movies.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.movies.adapters.FavouriteAdapter
+import com.example.movies.adapter.FavouriteAdapter
 
 import com.example.movies.R
 import com.example.movies.contract.MainContract

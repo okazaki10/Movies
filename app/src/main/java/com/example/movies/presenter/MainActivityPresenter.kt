@@ -1,14 +1,14 @@
 package com.example.movies.presenter
 
 
-import com.example.movies.adapters.NowplayingAdapter
-import com.example.movies.adapters.PopularAdapter
-import com.example.movies.adapters.TopAdapter
-import com.example.movies.configs.NetworkConfig
+import com.example.movies.adapter.NowplayingAdapter
+import com.example.movies.adapter.PopularAdapter
+import com.example.movies.adapter.TopAdapter
+import com.example.movies.config.NetworkConfig
 import com.example.movies.contract.MainContract
-import com.example.movies.models.NowplayingModel
-import com.example.movies.models.PopularModel
-import com.example.movies.models.TopModel
+import com.example.movies.model.NowplayingModel
+import com.example.movies.model.PopularModel
+import com.example.movies.model.TopModel
 
 import retrofit2.Call
 import retrofit2.Callback
