@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         >
         <activity
-            android:name=".ViewModel.MainActivity"
+            android:name=".viewmodel.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
 
@@ -22,9 +22,9 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".ViewModel.DetailActivity" android:label="Detail" android:theme="@style/AppTheme.ActionBar.Transparent"><meta-data android:name="android.support.PARENT_ACTIVITY"
-            android:value=".ViewModel.MainActivity"/></activity>
-        <activity android:name=".ViewModel.FavouriteActivity" android:label="Favourite Movies"  android:theme="@style/Theme.Movies" ></activity>
+        <activity android:name=".viewmodel.DetailActivity" android:label="Detail" android:theme="@style/AppTheme.ActionBar.Transparent"><meta-data android:name="android.support.PARENT_ACTIVITY"
+            android:value=".viewmodel.MainActivity"/></activity>
+        <activity android:name=".viewmodel.FavouriteActivity" android:label="Favourite Movies"  android:theme="@style/Theme.Movies" ></activity>
 
     </application>
 

@@ -1,16 +1,15 @@
-package com.example.movies.Adapter
+package com.example.movies.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movies.Config.NetworkConfig
-import com.example.movies.Model.PopularListModel
+import com.example.movies.config.NetworkConfig
+import com.example.movies.model.PopularListModel
 
 import com.example.movies.R
-import com.example.movies.ViewModel.DetailActivity
+import com.example.movies.viewmodel.DetailActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_popular.view.*
 

@@ -1,4 +1,4 @@
-package com.example.movies.ViewModel
+package com.example.movies.viewmodel
 
 
 import android.app.AlertDialog
@@ -7,9 +7,9 @@ import android.widget.Toast
 
 
 import androidx.appcompat.app.AppCompatActivity
-import com.example.movies.Adapter.ReviewAdapter
-import com.example.movies.Config.NetworkConfig
-import com.example.movies.Model.ReviewModel
+import com.example.movies.adapter.ReviewAdapter
+import com.example.movies.config.NetworkConfig
+import com.example.movies.model.ReviewModel
 import com.example.movies.R
 import com.squareup.picasso.Picasso
 

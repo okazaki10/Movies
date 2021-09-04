@@ -1,9 +1,9 @@
-package com.example.movies.Config
+package com.example.movies.config
 
 
-import com.example.movies.Config.NetworkConfig.Companion.API_KEY
-import com.example.movies.Model.PopularModel
-import com.example.movies.Model.ReviewModel
+import com.example.movies.config.NetworkConfig.Companion.API_KEY
+import com.example.movies.model.PopularModel
+import com.example.movies.model.ReviewModel
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

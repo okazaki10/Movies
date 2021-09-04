@@ -1,11 +1,11 @@
-package com.example.movies.ViewModel
+package com.example.movies.viewmodel
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.movies.Adapter.FavouriteAdapter
+import com.example.movies.adapter.FavouriteAdapter
 
 import com.example.movies.R
-import com.example.movies.Model.FavouriteDBModel
+import com.example.movies.model.FavouriteDBModel
 
 
 import kotlinx.android.synthetic.main.favourite.*

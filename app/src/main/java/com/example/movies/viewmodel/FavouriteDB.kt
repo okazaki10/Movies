@@ -1,4 +1,4 @@
-package com.example.movies.ViewModel
+package com.example.movies.viewmodel
 
 import android.content.Context
 import android.database.sqlite.SQLiteOpenHelper

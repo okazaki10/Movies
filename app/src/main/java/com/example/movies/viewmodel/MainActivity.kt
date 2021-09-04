@@ -1,12 +1,12 @@
-package com.example.movies.ViewModel
+package com.example.movies.viewmodel
 
 import android.os.Bundle
 import android.view.Menu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.movies.Adapter.PopularAdapter
-import com.example.movies.Config.NetworkConfig
-import com.example.movies.Model.PopularModel
+import com.example.movies.adapter.PopularAdapter
+import com.example.movies.config.NetworkConfig
+import com.example.movies.model.PopularModel
 import com.example.movies.R
 
 import kotlinx.android.synthetic.main.activity_main.*

@@ -1,16 +1,15 @@
-package com.example.movies.Adapter
+package com.example.movies.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movies.Config.NetworkConfig
-import com.example.movies.Model.FavouriteDBModel
+import com.example.movies.config.NetworkConfig
+import com.example.movies.model.FavouriteDBModel
 
 import com.example.movies.R
-import com.example.movies.ViewModel.DetailActivity
+import com.example.movies.viewmodel.DetailActivity
 
 
 import com.squareup.picasso.Picasso
@@ -42,7 +41,14 @@ class FavouriteAdapter(val data: List<FavouriteDBModel>?) : RecyclerView.Adapter
         fun bind(get: FavouriteDBModel?) {
             itemView.fav_title.setText(get?.title)
             itemView.fav_originaltitle.setText(get?.original_title)
-            itemView.fav_overview.setText(get?.overview)
+
+            var overview = get?.overview
+
+            if (overview?.length!! > 200){
+               overview = overview.substring(0,200)+"..."
+            }
+
+            itemView.fav_overview.setText(overview)
             Picasso.get().load(NetworkConfig.URL_IMAGE+get?.image).into(itemView.fav_photo);
         }
     }
