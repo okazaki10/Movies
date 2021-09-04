@@ -25,13 +25,12 @@ class PopularAdapter(val data: List<PopularListModel>?) : RecyclerView.Adapter<P
         holder.itemView.setOnClickListener(View.OnClickListener { view ->
             val intent = Intent(holder.itemView.context, DetailActivity::class.java)
             var data2 = data?.get(position)
-            intent.putExtra("id", data2?.id)
+            intent.putExtra("id", data2?.id.toString())
             intent.putExtra("title", data2?.title)
             intent.putExtra("originalTitle",  "Original Title : "+data2?.originalTitle)
             intent.putExtra("overview", data2?.overview)
             intent.putExtra("image",NetworkConfig.URL_IMAGE+data2?.backdropPath)
             holder.itemView.context.startActivity(intent)
-
             })
     }
     class MyHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

@@ -1,11 +1,11 @@
 package com.example.movies.ViewModel
 
 import android.os.Bundle
-import com.example.movies.model.FavouriteModel
 import androidx.appcompat.app.AppCompatActivity
 import com.example.movies.Adapter.FavouriteAdapter
 
 import com.example.movies.R
+import com.example.movies.Model.FavouriteDBModel
 
 
 import kotlinx.android.synthetic.main.favourite.*
@@ -17,12 +17,15 @@ class FavouriteActivity: AppCompatActivity() {
             setContentView(R.layout.favourite)
             val res = dbHelper.allData
 
-            var favlist = ArrayList<FavouriteModel>()
+            var favlist = ArrayList<FavouriteDBModel>()
 
             while (res.moveToNext()) {
-
-                favlist.add(FavouriteModel(res.getString(0),res.getString(1),res.getString(2),
-                res.getString(3),res.getString(4),res.getString(5).substring(0,200)+"..."))
+                var overview = res.getString(5)
+                if (overview.length>200){
+                    overview.substring(0,200)
+                }
+                favlist.add(FavouriteDBModel(res.getString(0),res.getString(1),res.getString(2),
+                res.getString(3),res.getString(4),overview+"..."))
             }
 
             rvfavourite.adapter = FavouriteAdapter(favlist)

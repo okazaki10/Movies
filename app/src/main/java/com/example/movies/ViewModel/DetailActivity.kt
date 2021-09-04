@@ -56,7 +56,7 @@ class DetailActivity: AppCompatActivity() {
 
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
 
-        id = intent?.extras?.getInt("id").toString()
+        id = intent?.extras?.getString("id")
         title = intent?.extras?.getString("title")
         image = intent?.extras?.getString("image")
         originalTitle = intent?.extras?.getString("originalTitle")
