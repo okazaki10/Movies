@@ -20,7 +20,6 @@ class NetworkConfig {
         const val API_KEY:String = "f6f98d7d8d6378d73921c90080ffcb0f"
     }
 
-
     // set interceptor
     fun getInterceptor() : OkHttpClient {
         val logging = HttpLoggingInterceptor()

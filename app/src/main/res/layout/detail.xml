@@ -106,7 +106,7 @@ android:orientation="horizontal"
 
 
         <com.like.LikeButton
-            android:id="@+id/star_button"
+            android:id="@+id/add_favourite"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_toLeftOf="@id/sharebutton"

@@ -1,6 +1,7 @@
 package com.example.movies.ViewModel
 
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.widget.Toast
 
@@ -34,24 +35,33 @@ import android.widget.Button
 import android.widget.ImageButton
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.like.LikeButton
 
+import com.like.OnLikeListener
+import kotlinx.android.synthetic.main.sqlite_view.*
 
 
 class DetailActivity: AppCompatActivity() {
     var sheetBehavior: BottomSheetBehavior<*>? = null
     var sheetDialog: BottomSheetDialog? = null
     var bottom_sheet: View? = null
+    var id:String? = ""
+    var title:String? = ""
+    var image:String? = ""
+    var originalTitle:String? = ""
+    var overview:String? = ""
+    internal var dbHelper = FavouriteDB(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.detail)
 
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
 
-        var id = intent?.extras?.getInt("id").toString()
-        var title = intent?.extras?.getString("title")
-        var image = intent?.extras?.getString("image")
-        var originalTitle = intent?.extras?.getString("originalTitle")
-        var overview = intent?.extras?.getString("overview")
+        id = intent?.extras?.getInt("id").toString()
+        title = intent?.extras?.getString("title")
+        image = intent?.extras?.getString("image")
+        originalTitle = intent?.extras?.getString("originalTitle")
+        overview = intent?.extras?.getString("overview")
 
         judul.setText(title)
         originaltitle.setText(originalTitle)
@@ -69,27 +79,82 @@ class DetailActivity: AppCompatActivity() {
                 }
             })
 
+        val isi = dbHelper.selectData(id!!)
+
+        add_favourite.isLiked = isi.moveToNext()
+
+        add_favourite.setOnLikeListener(object : OnLikeListener {
+            override fun liked(likeButton: LikeButton) {
+
+                try {
+                    dbHelper.insertData(id!!,title!!,image!!,originalTitle!!,overview!!)
+                }catch (e: Exception){
+                    e.printStackTrace()
+                    Toast.makeText(this@DetailActivity, e.message.toString(), Toast.LENGTH_SHORT).show()
+                }
+
+            }
+            override fun unLiked(likeButton: LikeButton) {
+
+                try {
+                    dbHelper.deleteData(id!!)
+                }catch (e: Exception){
+                    e.printStackTrace()
+                    Toast.makeText(this@DetailActivity, e.message.toString(), Toast.LENGTH_SHORT).show()
+                }
+
+            }
+        })
+
+
         bottom_sheet = findViewById(R.id.bottom_sheet);
         sheetBehavior = BottomSheetBehavior.from(bottom_sheet!!);
 
-
         sharebutton.setOnClickListener(View.OnClickListener { showBottomSheetDialog() })
+
     }
+
+    fun showDialog(title : String,Message : String){
+        val builder = AlertDialog.Builder(this)
+        builder.setCancelable(true)
+        builder.setTitle(title)
+        builder.setMessage(Message)
+        builder.show()
+    }
+
 
     private fun showBottomSheetDialog() {
         val view: View = layoutInflater.inflate(R.layout.sheet, null)
         if (sheetBehavior?.getState() === BottomSheetBehavior.STATE_EXPANDED) {
             sheetBehavior?.setState(BottomSheetBehavior.STATE_COLLAPSED)
         }
+
         view.findViewById<Button>(R.id.bt_close).setOnClickListener( {
 
                 sheetDialog?.dismiss()
 
         })
+
         view.findViewById<ImageButton>(R.id.facebook).setOnClickListener({
 
-                Toast.makeText(applicationContext, "Makasih ya sudah subscribe", Toast.LENGTH_SHORT)
-                    .show()
+            val res = dbHelper.allData
+
+            val buffer = StringBuffer()
+            while (res.moveToNext()) {
+                buffer.append("ID :" + res.getString(0) + "\n")
+                buffer.append("MOVIE_ID :" + res.getString(1) + "\n")
+                buffer.append("TITLE :" + res.getString(2) + "\n")
+                buffer.append("IMAGE :" + res.getString(3) + "\n")
+                buffer.append("ORIGINAL TITLE :" + res.getString(4) + "\n")
+                buffer.append("OVERVIEW :" + res.getString(5) + "\n")
+            }
+            val isi = dbHelper.selectData(id!!)
+            var coba = ""
+            while (isi.moveToNext()) {
+                coba = isi.getString(0)
+            }
+
+            showDialog("Data Listing"+"   "+coba, buffer.toString())
 
         })
         sheetDialog = BottomSheetDialog(this@DetailActivity)

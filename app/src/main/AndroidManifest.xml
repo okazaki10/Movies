@@ -25,6 +25,7 @@
         <activity android:name=".ViewModel.DetailActivity" android:label="Detail" android:theme="@style/AppTheme.ActionBar.Transparent"><meta-data android:name="android.support.PARENT_ACTIVITY"
             android:value=".ViewModel.MainActivity"/></activity>
         <activity android:name=".ViewModel.FavouriteActivity" android:label="Favourite Movies"  android:theme="@style/Theme.Movies" ></activity>
+
     </application>
 
 </manifest>
